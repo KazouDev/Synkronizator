@@ -1,0 +1,7 @@
+{
+  "files.associations": {
+    "stdarg.h": "c",
+    "inet.h": "c",
+    "client.C": "cpp"
+  }
+}
