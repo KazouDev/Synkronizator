@@ -1,324 +1,77 @@
-[2024-06-24 23:09:40] [2024-06-24 23:09:40] port: 8081
-[2024-06-24 23:09:43] [IP: 224.243.190.107] [Socket] New connection
-[2024-06-24 23:09:43] [IP: 224.243.190.107] Waiting for API key...
-[2024-06-24 23:09:46] [IP: 224.243.190.107] [2024-06-24 23:09:46] [IP: 224.243.190.107] 224.243.190.107] Waiting for API key...
-[2024-06-24 23:09:46] [IP: 224.243.190.107] [2024-06-24 23:09:46] [IP: 224.243.190.107] 224.243.190.107] [2024-06-24 23:09:46] [IP: 224.243.190.107] 224.243.190.107] Waiting for API key...)
-[2024-06-24 23:09:46] [IP: 224.243.190.107] Waiting for API key...
-[2024-06-24 23:09:53] [IP: 224.243.190.107] [2024-06-24 23:09:53] [IP: 224.243.190.107] 224.243.190.107] Waiting for API key...
-[2024-06-24 23:09:53] [IP: 224.243.190.107] [2024-06-24 23:09:53] [IP: 224.243.190.107] 224.243.190.107] [2024-06-24 23:09:53] [IP: 224.243.190.107] 224.243.190.107] Waiting for API key...)
-[2024-06-24 23:09:53] [IP: 224.243.190.107] Waiting for API key...
-[2024-06-24 23:09:55] [IP: 224.243.190.107] [2024-06-24 23:09:55] [IP: 224.243.190.107] 224.243.190.107] Waiting for API key...
-[2024-06-24 23:09:55] [IP: 224.243.190.107] [2024-06-24 23:09:55] [IP: 224.243.190.107] 224.243.190.107] [2024-06-24 23:09:55] [IP: 224.243.190.107] 224.243.190.107] Waiting for API key...)
-[2024-06-24 23:09:55] [IP: 224.243.190.107] Waiting for API key...
-[2024-06-24 23:09:56] [IP: 224.243.190.107] [2024-06-24 23:09:56] [IP: 224.243.190.107] 224.243.190.107] Waiting for API key...
-[2024-06-24 23:09:56] [IP: 224.243.190.107] [2024-06-24 23:09:56] [IP: 224.243.190.107] 224.243.190.107] [2024-06-24 23:09:56] [IP: 224.243.190.107] 224.243.190.107] Waiting for API key...)
-[2024-06-24 23:09:56] [IP: 224.243.190.107] Waiting for API key...
-[2024-06-24 23:09:57] [IP: 224.243.190.107] [2024-06-24 23:09:57] [IP: 224.243.190.107] 224.243.190.107] Waiting for API key...
-[2024-06-24 23:09:57] [IP: 224.243.190.107] [2024-06-24 23:09:57] [IP: 224.243.190.107] 224.243.190.107] [2024-06-24 23:09:57] [IP: 224.243.190.107] 224.243.190.107] Waiting for API key...)
-[2024-06-24 23:09:57] [IP: 224.243.190.107] Waiting for API key...
-[2024-06-24 23:09:58] [IP: 224.243.190.107] [2024-06-24 23:09:58] [IP: 224.243.190.107] 224.243.190.107] Waiting for API key...
-[2024-06-24 23:09:59] [IP: 224.243.190.107] [2024-06-24 23:09:59] [IP: 224.243.190.107] 224.243.190.107] [2024-06-24 23:09:58] [IP: 224.243.190.107] 224.243.190.107] Waiting for API key...)
-[2024-06-24 23:09:59] [IP: 224.243.190.107] Waiting for API key...
-[2024-06-24 23:10:04] [IP: 224.243.190.107] [2024-06-24 23:10:04] [IP: 224.243.190.107] 224.243.190.107] Waiting for API key...
-[2024-06-24 23:10:05] [IP: 224.243.190.107] [2024-06-24 23:10:05] [IP: 224.243.190.107] 224.243.190.107] [2024-06-24 23:10:04] [IP: 224.243.190.107] 224.243.190.107] Waiting for API key...)
-[2024-06-24 23:10:05] [IP: 224.243.190.107] Waiting for API key...
-[2024-06-24 23:14:14] [Socket] Listening on port: 8081
-[2024-06-24 23:14:17] [IP: 0.0.223.4] [Socket] New connection
-[2024-06-24 23:14:17] [IP: 0.0.223.4] Waiting for API key...
-[2024-06-24 23:14:18] [IP: 0.0.223.4] API Key received : aea
-[2024-06-24 23:14:18] [IP: 0.0.223.4] API Key refused (aea)
-[2024-06-24 23:14:18] [IP: 0.0.223.4] Waiting for API key...
-[2024-06-24 23:14:20] [IP: 0.0.223.4] API Key received : Ethan
-[2024-06-24 23:14:20] [IP: 0.0.223.4] API Key refused (Ethan)
-[2024-06-24 23:14:20] [IP: 0.0.223.4] Waiting for API key...
-[2024-06-24 23:14:26] [IP: 0.0.223.4] API Key received : api_key_test
-[2024-06-24 23:14:27] [IP: 0.0.223.4] [Authentification] API Key OK (JeanD)
-[2024-06-24 23:14:29] [IP: 0.0.223.4] [Command] Received help
+[2024-06-27 15:59:06] [Socket] Listening on port: 8080
+[2024-06-27 15:59:17] [IP: 0.85.81.111] [Socket] New connection
+[2024-06-27 15:59:17] [IP: 0.85.81.111] Waiting for API key...
+[2024-06-27 15:59:21] [IP: 0.85.81.111] API Key received : api_key_failed
+[2024-06-27 15:59:23] [IP: 0.85.81.111] AUTH REFUSED (api_key_failed)
+[2024-06-27 15:59:23] [IP: 0.85.81.111] Waiting for API key...
+[2024-06-27 15:59:27] [IP: 0.85.81.111] API Key received : api_key_test
+[2024-06-27 15:59:28] [IP: 0.85.81.111] [Authentification] API Key OK (JeanD)
+[2024-06-27 15:59:28] [IP: 0.85.81.111] Waiting for action...
+[2024-06-27 15:59:32] [IP: 0.85.81.111] [Command] Received help
+[2024-06-27 15:59:32] [IP: 0.85.81.111] Waiting for action...
+[2024-06-27 15:59:35] [IP: 0.85.81.111] [Command] Received list_all
+[2024-06-27 15:59:36] [IP: 0.85.81.111] [LIST_ALL] Result: [{"id": 21, "titre": "Villa d'exception avec piscine à débordement"}, {"id": 41, "titre": "Bateau de luxe dans les îles"}, {"id": 1, "titre": "Appartement cosy en centre-ville"}]
+[2024-06-27 15:59:36] [IP: 0.85.81.111] Waiting for action...
+[2024-06-27 15:59:47] [IP: 0.85.81.111] [Command] Received get_planning 3 2024-01-01
+[2024-06-27 15:59:47] [IP: 0.85.81.111] [GET_AVAILABILITY] Result for logement 3: [{"debut": "2024-02-05", "fin": "2024-02-15"}, {"debut": "2024-02-10", "fin": "2024-02-20"}, {"debut": "2024-04-01", "fin": "2024-04-10"}]
+[2024-06-27 15:59:47] [IP: 0.85.81.111] Waiting for action...
+[2024-06-27 16:00:00] [IP: 0.85.81.111] [Socket] Disconnection
+[2024-06-27 16:08:15] Socket Initialization: Address already in use
+[2024-06-27 16:08:19] [Socket] Listening on port: 8081
+[2024-06-27 16:08:24] [IP: 128.145.31.111] [Socket] New connection
+[2024-06-27 16:08:24] [IP: 128.145.31.111] Waiting for API key...
+[2024-06-27 16:08:29] [IP: 128.145.31.111] API Key received : api_key_test
+[2024-06-27 16:08:29] [IP: 128.145.31.111] [Authentification] API Key OK (JeanD)
+[2024-06-27 16:08:29] [IP: 128.145.31.111] Waiting for action...
+[2024-06-27 16:08:40] [IP: 128.145.31.111] [Command] Received get_planning 2 2021-01-01
+[2024-06-27 16:08:41] [IP: 128.145.31.111] Connection to database failed: ERROR:  column "id_proprietaire" does not exist
+LINE 1: ...ion WHERE id_logement = $1 AND date_fin >= $2 AND id_proprie...
+                                                             ^
 
-[2024-06-24 23:14:37] [IP: 0.0.223.4] [Command] Received LIST_ALL
+[2024-06-27 16:08:41] [IP: 128.145.31.111] Waiting for action...
+[2024-06-27 16:12:24] [Socket] Listening on port: 8080
+[2024-06-27 16:12:30] [IP: 128.81.243.108] [Socket] New connection
+[2024-06-27 16:12:30] [IP: 128.81.243.108] Waiting for API key...
+[2024-06-27 16:12:33] [IP: 128.81.243.108] API Key received : api_key_test
+[2024-06-27 16:12:34] [IP: 128.81.243.108] [Authentification] API Key OK (JeanD)
+[2024-06-27 16:12:34] [IP: 128.81.243.108] Waiting for action...
+[2024-06-27 16:12:45] [IP: 128.81.243.108] [Command] Received get_planning 1 2021-01-01
+[2024-06-27 16:12:46] [IP: 128.81.243.108] [GET_AVAILABILITY] Result for logement 1: [{"debut": "2024-01-05", "fin": "2024-01-15"}, {"debut": "2024-03-01", "fin": "2024-03-10"}, {"debut": "2024-07-15", "fin": "2024-07-22"}]
+[2024-06-27 16:12:46] [IP: 128.81.243.108] Waiting for action...
+[2024-06-27 16:12:55] [IP: 128.81.243.108] [Command] Received get_planning 2 2021-01-01
+[2024-06-27 16:12:55] [IP: 128.81.243.108] [GET_AVAILABILITY] Result for logement 2: []
+[2024-06-27 16:12:55] [IP: 128.81.243.108] Waiting for action...
+[2024-06-27 16:13:38] [IP: 128.81.243.108] [Command] Received get_planning 203 2021-01-01
+[2024-06-27 16:13:39] [IP: 128.81.243.108] [GET_AVAILABILITY] Result for logement 203: []
+[2024-06-27 16:13:39] [IP: 128.81.243.108] Waiting for action...
+[2024-06-27 16:17:25] [IP: 128.81.243.108] [Socket] Disconnection
+[2024-06-27 16:17:44] [Socket] Listening on port: 8080
+[2024-06-27 16:17:48] [IP: 128.81.201.109] [Socket] New connection
+[2024-06-27 16:17:48] [IP: 128.81.201.109] Waiting for API key...
+[2024-06-27 16:17:51] [IP: 128.81.201.109] API Key received : api_key_test
+[2024-06-27 16:17:54] [IP: 128.81.201.109] [Authentification] API Key OK (JeanD)
+[2024-06-27 16:17:54] [IP: 128.81.201.109] Waiting for action...
+[2024-06-27 16:18:04] [IP: 128.81.201.109] [Command] Received get_planning 2 2021-01-01
+[2024-06-27 16:18:05] [IP: 128.81.201.109] Connection to database failed: ERROR:  column "id_logement" does not exist
+LINE 1: SELECT * FROM sae._logement WHERE id_logement = $1 AND id_pr...
+                                          ^
 
-[2024-06-24 23:14:37] [IP: 0.0.223.4] [LIST_ALL] Result: [{"id": 1, "titre": "Appartement cosy en centre-ville"}, {"id": 21, "titre": "Villa d'exception avec piscine à débordement"}, {"id": 41, "titre": "Bateau de luxe dans les îles"}]
-[2024-06-24 23:14:39] [IP: 0.0.223.4] [Socket] Disconnection
-[2024-06-25 09:15:08] [Socket] Listening on port: 8081
-[2024-06-25 09:15:20] [IP: 0.192.97.4] [Socket] New connection
-[2024-06-25 09:15:20] [IP: 0.192.97.4] Waiting for API key...
-[2024-06-25 09:15:25] [IP: 0.192.97.4] API Key received : api_keytest
-[2024-06-25 09:15:25] [IP: 0.192.97.4] API Key refused (api_keytest)
-[2024-06-25 09:15:25] [IP: 0.192.97.4] Waiting for API key...
-[2024-06-25 09:15:32] [IP: 0.192.97.4] API Key received : api_key_test
-[2024-06-25 09:15:32] [IP: 0.192.97.4] [Authentification] API Key OK (JeanD)
-[2024-06-25 15:08:41] [Socket] Listening on port: 8081
-[2024-06-25 15:08:43] Socket Initialization: Address already in use
-[2024-06-25 15:08:48] [IP: 0.0.5.0] [Socket] New connection
-[2024-06-25 15:08:48] [IP: 0.0.5.0] Waiting for API key...
-[2024-06-25 15:08:54] [IP: 0.0.5.0] API Key received : api_key_test
-[2024-06-25 15:08:55] [IP: 0.0.5.0] [Authentification] API Key OK (JeanD)
-[2024-06-25 15:09:04] [IP: 0.0.5.0] [Command] Received git_availability 
-
-[2024-06-25 15:09:14] [IP: 0.0.5.0] [Command] Received get_abailability
-
-
-[2024-06-25 15:10:45] [Socket] Listening on port: 8081
-[2024-06-25 15:10:48] [IP: 0.192.50.4] [Socket] New connection
-[2024-06-25 15:10:48] [IP: 0.192.50.4] Waiting for API key...
-[2024-06-25 15:10:52] [IP: 0.192.50.4] API Key received : api_key_test
-[2024-06-25 15:10:52] [IP: 0.192.50.4] [Authentification] API Key OK (JeanD)
-[2024-06-25 15:11:03] [IP: 0.192.50.4] [Command] Received GET_AVAILABILITY
-
-[2024-06-25 15:11:29] [IP: 0.192.50.4] [Command] Received GET_AVAILABILITY
-
-[2024-06-25 15:11:38] [IP: 0.192.50.4] [Command] Received GET_AVAILABILITY 3
-
-[2024-06-25 15:12:01] [IP: 0.192.50.4] [Command] Received GET_AVAILABILITY 3 2024-01-01
-
-[2024-06-25 15:12:01] [IP: 0.192.50.4] Connection to database failed: ERROR:  relation "sae._indisponibilite" does not exist
-LINE 1: SELECT date_debut, date_fin FROM sae._indisponibilite WHERE ...
-                                         ^
-
-[2024-06-25 15:20:47] Socket Initialization: Address already in use
-[2024-06-25 15:20:54] [Socket] Listening on port: 8080
-[2024-06-25 15:21:06] [IP: 0.64.97.4] [Socket] New connection
-[2024-06-25 15:21:06] [IP: 0.64.97.4] Waiting for API key...
-[2024-06-25 15:21:09] [IP: 0.64.97.4] API Key received : api_key_test
-[2024-06-25 15:21:10] [IP: 0.64.97.4] [Authentification] API Key OK (JeanD)
-[2024-06-25 15:21:58] [IP: 0.64.97.4] [Command] Received git_availability 1 2024-01-01
-
-[2024-06-25 15:22:27] [IP: 0.64.97.4] [Command] Received get_availability 1 2024-01-01
-
-[2024-06-25 15:22:41] [IP: 0.64.97.4] [Command] Received 
-t_availability 1 2024-01-01
-
-[2024-06-25 15:22:50] [IP: 0.64.97.4] [Command] Received get_availability 1 2024-01-01 2025-01-01
-
-[2024-06-25 15:25:00] [Socket] Listening on port: 8081
-[2024-06-25 15:25:07] [IP: 0.128.17.2] [Socket] New connection
-[2024-06-25 15:25:07] [IP: 0.128.17.2] Waiting for API key...
-[2024-06-25 15:25:12] [IP: 0.128.17.2] API Key received : api_key_test
-[2024-06-25 15:25:12] [IP: 0.128.17.2] [Authentification] API Key OK (JeanD)
-[2024-06-25 15:25:38] [IP: 0.128.17.2] [Command] Received GET_AVAILABILITY 4 2024-01-01 2025-01-01
-
-[2024-06-25 15:25:39] [IP: 0.128.17.2] Connection to database failed: ERROR:  relation "sae._indisponibilite" does not exist
-LINE 1: SELECT date_debut, date_fin FROM sae._indisponibilite WHERE ...
-                                         ^
-
-[2024-06-25 15:25:57] Socket Initialization: Address already in use
-[2024-06-25 15:25:59] [Socket] Listening on port: 8080
-[2024-06-25 15:26:03] [IP: 0.64.170.2] [Socket] New connection
-[2024-06-25 15:26:03] [IP: 0.64.170.2] Waiting for API key...
-[2024-06-25 15:26:19] [IP: 0.64.170.2] API Key received : GET_AVAILABILITY 4 2024-01-01 2025-01-01
-[2024-06-25 15:26:20] [IP: 0.64.170.2] API Key refused (GET_AVAILABILITY 4 2024-01-01 2025-01-01)
-[2024-06-25 15:26:20] [IP: 0.64.170.2] Waiting for API key...
-[2024-06-25 15:26:27] [IP: 0.64.170.2] API Key received : api_key_test
-[2024-06-25 15:26:28] [IP: 0.64.170.2] [Authentification] API Key OK (JeanD)
-[2024-06-25 15:26:56] [IP: 0.64.170.2] [Command] Received GET_AVAILABILITY 4 2024-01-01 2025-01-01
-
-[2024-06-25 15:26:57] [IP: 0.64.170.2] [GET_AVAILABILITY] Result for logement 4: [{"debut": "2024-03-01", "fin": "2024-03-08"}, {"debut": "2024-03-01", "fin": "2024-03-10"}, {"debut": "2024-05-01", "fin": "2024-05-10"}]
-[2024-06-25 15:27:20] [IP: 0.64.170.2] [Command] Received GET_AVAILABILITY 4 2024-01-01 aeaeae
-01
-
-[2024-06-25 15:27:21] [IP: 0.64.170.2] Connection to database failed: ERROR:  invalid input syntax for type date: "aeaeae"
-
-[2024-06-25 21:39:51] [Socket] Listening on port: 8080
-[2024-06-25 21:40:08] [Socket] Listening on port: 8080
-[2024-06-25 21:40:22] [IP: 0.192.124.0] [Socket] New connection
-[2024-06-25 21:40:22] [IP: 0.192.124.0] Waiting for API key...
-[2024-06-25 21:40:28] [IP: 0.192.124.0] API Key received : api_key_test
-[2024-06-25 21:40:29] [IP: 0.192.124.0] [Authentification] API Key OK (JeanD)
-[2024-06-25 21:40:32] [IP: 0.192.124.0] [Command] Received list_all
-
-[2024-06-25 21:40:33] [IP: 0.192.124.0] [LIST_ALL] Result: [{"id": 1, "titre": "Appartement cosy en centre-ville"}, {"id": 21, "titre": "Villa d'exception avec piscine à débordement"}, {"id": 41, "titre": "Bateau de luxe dans les îles"}, {"id": 46, "titre": "Villa"}, {"id": 47, "titre": "Villa"}, {"id": 48, "titre": "Vila"}, {"id": 49, "titre": "Villa"}, {"id": 50, "titre": "Plo"}, {"id": 51, "titre": "1"}]
-[2024-06-25 21:40:38] [IP: 0.192.124.0] [Command] Received list_all
-
-[2024-06-25 21:40:38] [IP: 0.192.124.0] [LIST_ALL] Result: [{"id": 1, "titre": "Appartement cosy en centre-ville"}, {"id": 21, "titre": "Villa d'exception avec piscine à débordement"}, {"id": 41, "titre": "Bateau de luxe dans les îles"}, {"id": 46, "titre": "Villa"}, {"id": 47, "titre": "Villa"}, {"id": 48, "titre": "Vila"}, {"id": 49, "titre": "Villa"}, {"id": 50, "titre": "Plo"}, {"id": 51, "titre": "1"}]
-[2024-06-25 21:41:14] [IP: 0.192.124.0] [Command] Received get_availability 1 2024-01-01 2025-01-01
-
-[2024-06-25 21:41:34] [IP: 0.192.124.0] [Command] Received get_availability 1 2024-01-01 
-25-01-01
-
-[2024-06-25 21:42:53] Socket Initialization: Address already in use
-[2024-06-25 21:42:55] [Socket] Listening on port: 8081
-[2024-06-25 21:42:56] [IP: 0.0.34.0] [Socket] New connection
-[2024-06-25 21:42:56] [IP: 0.0.34.0] Waiting for API key...
-[2024-06-25 21:43:00] [IP: 0.0.34.0] API Key received : api_key_test
-[2024-06-25 21:43:00] [IP: 0.0.34.0] [Authentification] API Key OK (JeanD)
-[2024-06-25 21:43:59] [IP: 0.0.34.0] [Command] Received get_availibility 1 2024-01-01
-
-[2024-06-25 21:44:25] [IP: 0.0.34.0] [Command] Received get_availability 1 2024-01-01
-
-[2024-06-25 21:44:25] [IP: 0.0.34.0] [GET_AVAILABILITY] Result for logement 1: [{"debut": "2024-01-05", "fin": "2024-01-15"}, {"debut": "2024-03-01", "fin": "2024-03-10"}, {"debut": "2024-07-15", "fin": "2024-07-22"}]
-[2024-06-25 21:46:46] Socket Initialization: Address already in use
-[2024-06-25 21:46:47] [Socket] Listening on port: 8080
-[2024-06-25 21:46:50] [IP: 0.0.58.4] [Socket] New connection
-[2024-06-25 21:46:50] [IP: 0.0.58.4] Waiting for API key...
-[2024-06-25 21:46:54] [IP: 0.0.58.4] API Key received : api_key_test
-[2024-06-25 21:46:54] [IP: 0.0.58.4] [Authentification] API Key OK (JeanD)
-[2024-06-25 21:47:10] [IP: 0.0.58.4] [Command] Received get_availability 1 2034434
-
-[2024-06-25 21:47:10] [IP: 0.0.58.4] Connection to database failed: ERROR:  date/time field value out of range: "2034434"
-HINT:  Perhaps you need a different "datestyle" setting.
-
-[2024-06-25 21:57:18] Socket Initialization: Address already in use
-[2024-06-25 22:03:45] [Socket] Listening on port: 8080
-[2024-06-25 22:03:46] [IP: 0.128.104.0] [Socket] New connection
-[2024-06-25 22:03:46] [IP: 0.128.104.0] Waiting for API key...
-[2024-06-25 22:03:50] [IP: 0.128.104.0] API Key received : api_key_test
-[2024-06-25 22:03:50] [IP: 0.128.104.0] [Authentification] API Key OK (JeanD)
-[2024-06-25 22:04:08] [IP: 0.128.104.0] [Command] Received list_all
-
-[2024-06-25 22:04:08] [IP: 0.128.104.0] [LIST_ALL] Result: [{"id": 1, "titre": "Appartement cosy en centre-ville"}, {"id": 21, "titre": "Villa d'exception avec piscine à débordement"}, {"id": 41, "titre": "Bateau de luxe dans les îles"}, {"id": 46, "titre": "Villa"}, {"id": 47, "titre": "Villa"}, {"id": 48, "titre": "Vila"}, {"id": 49, "titre": "Villa"}, {"id": 50, "titre": "Plo"}, {"id": 51, "titre": "1"}]
-[2024-06-25 22:04:21] [IP: 0.128.104.0] [Command] Received get_availability 1 2023445
-
-[2024-06-25 22:04:21] [IP: 0.128.104.0] Connection to database failed: ERROR:  date/time field value out of range: "2023445"
-HINT:  Perhaps you need a different "datestyle" setting.
-
-[2024-06-25 22:04:48] Socket Initialization: Address already in use
-[2024-06-25 22:04:50] [Socket] Listening on port: 8081
-[2024-06-25 22:04:52] [IP: 0.192.225.4] [Socket] New connection
-[2024-06-25 22:04:52] [IP: 0.192.225.4] Waiting for API key...
-[2024-06-25 22:04:56] [IP: 0.192.225.4] API Key received : api_key_test
-[2024-06-25 22:04:56] [IP: 0.192.225.4] [Authentification] API Key OK (JeanD)
-[2024-06-25 22:05:05] [IP: 0.192.225.4] [Command] Received get_availability 1 20243
-
-[2024-06-25 22:05:05] [IP: 0.192.225.4] [Argument] Start date (20243) invalid format !
-[2024-06-25 22:05:23] [IP: 0.192.225.4] [Command] Received get_availability 1 2024-01-01
-
-[2024-06-25 22:05:23] [IP: 0.192.225.4] [Argument] End date () invalid format !
-[2024-06-25 22:05:49] [Socket] Listening on port: 8080
-[2024-06-25 22:05:52] [IP: 0.64.64.0] [Socket] New connection
-[2024-06-25 22:05:52] [IP: 0.64.64.0] Waiting for API key...
-[2024-06-25 22:05:55] [IP: 0.64.64.0] API Key received : api_key_test
-[2024-06-25 22:05:55] [IP: 0.64.64.0] [Authentification] API Key OK (JeanD)
-[2024-06-25 22:06:10] [IP: 0.64.64.0] [Command] Received get_availability 1 2024-01-22
-
-[2024-06-25 22:06:10] [IP: 0.64.64.0] [GET_AVAILABILITY] Result for logement 1: [{"debut": "2024-03-01", "fin": "2024-03-10"}, {"debut": "2024-07-15", "fin": "2024-07-22"}]
-[2024-06-25 22:06:22] [IP: 0.64.64.0] [Command] Received get_availability 1 2024-01-22 234567
-
-[2024-06-25 22:06:22] [IP: 0.64.64.0] [Argument] End date (234567) invalid format !
-[2024-06-25 22:08:32] Socket Initialization: Address already in use
-[2024-06-25 22:08:34] [Socket] Listening on port: 8081
-[2024-06-25 22:08:37] [IP: 0.128.126.4] [Socket] New connection
-[2024-06-25 22:08:37] [IP: 0.128.126.4] Waiting for API key...
-[2024-06-25 22:08:44] [IP: 0.128.126.4] API Key received : api_key_test
-[2024-06-25 22:08:44] [IP: 0.128.126.4] [Authentification] API Key OK (JeanD)
-[2024-06-25 22:08:46] [IP: 0.128.126.4] [Command] Received ae
-
-[2024-06-25 22:08:47] [IP: 0.128.126.4] [Command] Received help
-
-[2024-06-25 22:08:49] [IP: 0.128.126.4] [Command] Received help
-
-[2024-06-25 22:08:52] [IP: 0.128.126.4] [Command] Received list_all
-
-[2024-06-25 22:08:52] [IP: 0.128.126.4] [LIST_ALL] Result: [{"id": 1, "titre": "Appartement cosy en centre-ville"}, {"id": 21, "titre": "Villa d'exception avec piscine à débordement"}, {"id": 41, "titre": "Bateau de luxe dans les îles"}, {"id": 46, "titre": "Villa"}, {"id": 47, "titre": "Villa"}, {"id": 48, "titre": "Vila"}, {"id": 49, "titre": "Villa"}, {"id": 50, "titre": "Plo"}, {"id": 51, "titre": "1"}]
-[2024-06-25 22:09:14] [IP: 0.128.126.4] [Command] Received get_availability 41 2024-01-01
-
-[2024-06-25 22:09:14] [IP: 0.128.126.4] [GET_AVAILABILITY] Result for logement 41: []
-[2024-06-25 22:09:36] [IP: 0.128.126.4] [Command] Received get_availability 1 2024-01-01
-
-
-[2024-06-25 22:09:36] [IP: 0.128.126.4] [GET_AVAILABILITY] Result for logement 1: [{"debut": "2024-01-05", "fin": "2024-01-15"}, {"debut": "2024-03-01", "fin": "2024-03-10"}, {"debut": "2024-07-15", "fin": "2024-07-22"}]
-[2024-06-25 22:09:56] [IP: 0.128.126.4] [Command] Received get_availability 1 2024-01-01 0930943
-
-[2024-06-25 22:09:56] [IP: 0.128.126.4] [Argument] End date (0930943) invalid format !
-[2024-06-25 22:10:02] [IP: 0.128.126.4] [Command] Received get_availability 1 2024-01-01
-930943
-
-[2024-06-25 22:10:02] [IP: 0.128.126.4] [Argument] End date (930943) invalid format !
-[2024-06-25 22:10:42] Socket Initialization: Address already in use
-[2024-06-25 22:10:45] [Socket] Listening on port: 8080
-[2024-06-25 22:10:48] [IP: 0.192.5.2] [Socket] New connection
-[2024-06-25 22:10:48] [IP: 0.192.5.2] Waiting for API key...
-[2024-06-25 22:10:51] [IP: 0.192.5.2] API Key received : api_key_test
-[2024-06-25 22:10:52] [IP: 0.192.5.2] [Authentification] API Key OK (JeanD)
-[2024-06-25 22:11:03] [IP: 0.192.5.2] [Command] Received get_availability 1 2024-01-01
-
-[2024-06-25 22:11:03] [IP: 0.192.5.2] [GET_AVAILABILITY] Result for logement 1: [{"debut": "2024-01-05", "fin": "2024-01-15"}, {"debut": "2024-03-01", "fin": "2024-03-10"}, {"debut": "2024-07-15", "fin": "2024-07-22"}]
-[2024-06-25 22:11:20] [IP: 0.192.5.2] [Command] Received get_availability 1 2024-01-01 2024aeaeae
-
-[2024-06-25 22:11:20] [IP: 0.192.5.2] [Argument] End date (2024aeaeae) invalid format !
-[2024-06-26 16:28:31] [Socket] Listening on port: 8080
-[2024-06-26 16:28:45] [IP: 0.64.168.0] [Socket] New connection
-[2024-06-26 16:28:45] [IP: 0.64.168.0] Waiting for API key...
-[2024-06-26 16:28:50] [IP: 0.64.168.0] API Key received : api_key_test
-[2024-06-26 16:28:51] [IP: 0.64.168.0] [Authentification] API Key OK (JeanD)
-[2024-06-26 16:28:54] [IP: 0.64.168.0] [Command] Received list_all
-
-[2024-06-26 16:28:54] [IP: 0.64.168.0] [LIST_ALL] Result: [{"id": 1, "titre": "Appartement cosy en centre-ville"}, {"id": 21, "titre": "Villa d'exception avec piscine à débordement"}, {"id": 41, "titre": "Bateau de luxe dans les îles"}]
-[2024-06-26 16:29:08] [IP: 0.64.168.0] [Command] Received get_planning 1 2024-01-01
-
-[2024-06-26 16:29:19] [IP: 0.64.168.0] [Command] Received get_availability 1 2024-01-01
-
-[2024-06-26 16:29:20] [IP: 0.64.168.0] [GET_AVAILABILITY] Result for logement 1: [{"debut": "2024-01-05", "fin": "2024-01-15"}, {"debut": "2024-03-01", "fin": "2024-03-10"}, {"debut": "2024-07-15", "fin": "2024-07-22"}]
-[2024-06-26 16:31:54] Socket Initialization: Address already in use
-[2024-06-26 16:31:58] [Socket] Listening on port: 8081
-[2024-06-26 16:32:01] [IP: 0.0.224.2] [Socket] New connection
-[2024-06-26 16:32:01] [IP: 0.0.224.2] Waiting for API key...
-[2024-06-26 16:32:06] [IP: 0.0.224.2] API Key received : api_key_test
-[2024-06-26 16:32:07] [IP: 0.0.224.2] [Authentification] API Key OK (JeanD)
-[2024-06-26 16:32:14] [IP: 0.0.224.2] [Command] Received help
-
-[2024-06-26 22:04:22] [Socket] Listening on port: 8080
-[2024-06-26 22:04:25] [IP: 0.0.45.2] [Socket] New connection
-[2024-06-26 22:04:25] [IP: 0.0.45.2] Waiting for API key...
-[2024-06-26 22:04:26] [IP: 0.0.45.2] API Key received : 
-[2024-06-26 22:04:26] [IP: 0.0.45.2] API Key refused ()
-[2024-06-26 22:04:26] [IP: 0.0.45.2] Waiting for API key...
-[2024-06-26 22:04:26] [IP: 0.0.45.2] [Socket Read]: Connection reset by peer
-[2024-06-26 22:04:48] [Socket] Listening on port: 8080
-[2024-06-26 22:04:53] [IP: 0.192.52.4] [Socket] New connection
-[2024-06-26 22:04:53] [IP: 0.192.52.4] Waiting for API key...
-[2024-06-26 22:04:56] [IP: 0.192.52.4] API Key received : api_key_test
-[2024-06-26 22:04:56] [IP: 0.192.52.4] [Authentification] API Key OK (JeanD)
-[2024-06-26 22:04:56] [IP: 0.192.52.4] Waiting for Command...
-[2024-06-26 22:05:00] [IP: 0.192.52.4] [Command] Received get_all
-[2024-06-26 22:05:00] [IP: 0.192.52.4] [Command] Unknown Command (get_all)
-[2024-06-26 22:05:04] [IP: 0.192.52.4] [Command] Received list_all
-[2024-06-26 22:05:04] [IP: 0.192.52.4] [LIST_ALL] Result: [{"id": 21, "titre": "Villa d'exception avec piscine à débordement"}, {"id": 41, "titre": "Bateau de luxe dans les îles"}, {"id": 1, "titre": "Appartement cosy en centre-ville"}]
-[2024-06-26 22:05:11] [IP: 0.192.52.4] [Command] Received 
-[2024-06-26 22:05:11] [IP: 0.192.52.4] [Command] Unknown Command ()
-[2024-06-27 11:06:52] [Socket] Listening on port: 8080
-[2024-06-27 11:06:56] [IP: 208.209.84.109] [Socket] New connection
-[2024-06-27 11:06:56] [IP: 208.209.84.109] Waiting for API key...
-[2024-06-27 11:07:00] [IP: 208.209.84.109] API Key received : api_key_test
-[2024-06-27 11:07:00] [IP: 208.209.84.109] Connection to database failed: could not translate host name ""tai.db.elephantsql.com" to address: nodename nor servname provided, or not known
-
-[2024-06-27 11:07:00] [IP: 208.209.84.109] AUTH REFUSED (api_key_test)
-[2024-06-27 11:07:00] [IP: 208.209.84.109] Waiting for API key...
-[2024-06-27 11:07:15] Socket Initialization: Address already in use
-[2024-06-27 11:07:21] [Socket] Listening on port: 8081
-[2024-06-27 11:07:28] [IP: 208.145.101.109] [Socket] New connection
-[2024-06-27 11:07:28] [IP: 208.145.101.109] Waiting for API key...
-[2024-06-27 11:07:31] [IP: 208.145.101.109] API Key received : api_key_test
-[2024-06-27 11:07:31] [IP: 208.145.101.109] Connection to database failed: could not translate host name ""tai.db.elephantsql.com" to address: nodename nor servname provided, or not known
-
-[2024-06-27 11:07:31] [IP: 208.145.101.109] AUTH REFUSED (api_key_test)
-[2024-06-27 11:07:31] [IP: 208.145.101.109] Waiting for API key...
-[2024-06-27 11:09:31] Socket Initialization: Address already in use
-[2024-06-27 11:09:39] [Socket] Listening on port: 8080
-[2024-06-27 11:09:44] [IP: 208.209.61.111] [Socket] New connection
-[2024-06-27 11:09:44] [IP: 208.209.61.111] Waiting for API key...
-[2024-06-27 11:09:47] [IP: 208.209.61.111] API Key received : api_key_test
-[2024-06-27 11:09:47] [IP: 208.209.61.111] Connection to database failed: could not translate host name ""tai.db.elephantsql.com" to address: nodename nor servname provided, or not known
-
-[2024-06-27 11:09:47] [IP: 208.209.61.111] AUTH REFUSED (api_key_test)
-[2024-06-27 11:09:47] [IP: 208.209.61.111] Waiting for API key...
-[2024-06-27 11:10:03] Socket Initialization: Address already in use
-[2024-06-27 11:10:07] Socket Initialization: Address already in use
-[2024-06-27 11:10:10] Socket Initialization: Address already in use
-[2024-06-27 11:10:11] [Socket] Listening on port: 8082
-[2024-06-27 11:10:16] [IP: 208.81.45.111] [Socket] New connection
-[2024-06-27 11:10:16] [IP: 208.81.45.111] Waiting for API key...
-[2024-06-27 11:10:19] [IP: 208.81.45.111] API Key received : api_key_test
-[2024-06-27 11:10:19] [IP: 208.81.45.111] Connection to database failed: could not translate host name ""tai.db.elephantsql.com" to address: nodename nor servname provided, or not known
-
-[2024-06-27 11:10:19] [IP: 208.81.45.111] AUTH REFUSED (api_key_test)
-[2024-06-27 11:10:19] [IP: 208.81.45.111] Waiting for API key...
-[2024-06-27 11:10:59] [Socket] Listening on port: 8081
-[2024-06-27 11:11:04] [Socket] Listening on port: 8081
-[2024-06-27 11:12:04] [Socket] Listening on port: 8081
-[2024-06-27 11:12:22] [Socket] Listening on port: 8081
-[2024-06-27 11:12:26] [IP: 208.17.176.111] [Socket] New connection
-[2024-06-27 11:12:26] [IP: 208.17.176.111] Waiting for API key...
-[2024-06-27 11:12:30] [IP: 208.17.176.111] API Key received : api_key_test
-[2024-06-27 11:12:31] [IP: 208.17.176.111] [Authentification] API Key OK (JeanD)
-[2024-06-27 11:12:31] [IP: 208.17.176.111] Waiting for Command...
-[2024-06-27 11:12:33] [IP: 208.17.176.111] [Socket] Disconnection
+[2024-06-27 16:18:05] [IP: 128.81.201.109] Waiting for action...
+[2024-06-27 16:18:20] Socket Initialization: Address already in use
+[2024-06-27 16:18:26] [Socket] Listening on port: 8081
+[2024-06-27 16:18:30] [IP: 128.209.185.111] [Socket] New connection
+[2024-06-27 16:18:30] [IP: 128.209.185.111] Waiting for API key...
+[2024-06-27 16:18:36] [IP: 128.209.185.111] API Key received : api_key_test
+[2024-06-27 16:18:37] [IP: 128.209.185.111] [Authentification] API Key OK (JeanD)
+[2024-06-27 16:18:37] [IP: 128.209.185.111] Waiting for action...
+[2024-06-27 16:18:47] [IP: 128.209.185.111] [Command] Received get_planning 2 2021-01-01
+[2024-06-27 16:18:55] [IP: 128.209.185.111] [GET_AVAILABILITY] Result for logement 2: []
+[2024-06-27 16:18:55] [IP: 128.209.185.111] Waiting for action...
+[2024-06-27 16:19:48] [Socket] Listening on port: 8080
+[2024-06-27 16:19:51] [IP: 128.17.185.111] [Socket] New connection
+[2024-06-27 16:19:51] [IP: 128.17.185.111] Waiting for API key...
+[2024-06-27 16:19:55] [IP: 128.17.185.111] API Key received : api_key_test
+[2024-06-27 16:19:56] [IP: 128.17.185.111] [Authentification] API Key OK (JeanD)
+[2024-06-27 16:19:56] [IP: 128.17.185.111] Waiting for action...
+[2024-06-27 16:20:05] [IP: 128.17.185.111] [Command] Received get_planning 2 2021-01-01
+[2024-06-27 16:20:06] [IP: 128.17.185.111] Waiting for action...

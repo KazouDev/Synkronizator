@@ -12,7 +12,7 @@ En partant du `.env.template` créer un fichier `.env`, en remplissant le fichie
 
 Pour compiler le serveur , utilisez la commande suivante :
 
-La librairie `postgresql` **DOIT** être installé, consulter ce lien.
+La librairie `postgresql` **DOIT** être installé, consultez [ce lien](https://www.postgresql.org/).
 
 ```bash
 gcc -o synkronizator synkronizator.c -lpq

@@ -277,6 +277,7 @@ void launch_socket() {
                 memset(buffer, 0, sizeof(buffer));
                 if (write(cnx, "WAIT AUTH\n", 11) <= 0) break;
                 output_log("Waiting for API key...");
+                printf("Waiting for API Key...\n");
                 int valread = read(cnx, buffer, BUFFER_SIZE);
                 if (valread <= 0) break;
                 clean_input(buffer);
@@ -303,8 +304,9 @@ void launch_socket() {
             if (send(cnx, response, strlen(response), 0) <= 0) break;
 
             while (1) {
+                printf("Waiting for action...\n");
                 if (send(cnx, "WAIT ACTION\n", 13, 0) <= 0) break;
-                output_log("Waiting for Command...");
+                output_log("Waiting for action...");
                 int valread = read(cnx, buffer, BUFFER_SIZE);
                 if (valread <= 0) break;
 
@@ -320,7 +322,9 @@ void launch_socket() {
                     get_planning(cnx, user, buffer);
                 } else if (strncasecmp(buffer, "HELP", 4) == 0) {
                     snprintf(response, BUFFER_SIZE, "%-*s  %s\n", 36, "LIST_ALL", "List all logement.");
-                    snprintf(formatter, BUFFER_SIZE, "%-*s  %s\n", 36, "GET_PLANNING <ID> <DEBUT> [FIN]", "List planing of specified logement. <ID>: Identifiant du logement, <DEBUT>: Date de début, [FIN]; Date de fin (optionnel).");
+                    snprintf(formatter, BUFFER_SIZE, "%-*s  %s\n", 36, "GET_PLANNING <ID> <DEBUT> [FIN]", "List planing of specified logement. <ID>: Housing ID, <START>: Date of start, [END]; Date of end (optionnal).");
+                    strcat(response, formatter);
+                    snprintf(formatter, BUFFER_SIZE, "%-*s  %s\n", 36, "SET_AVAILABILITY <ID> <0/1>", "Set availability of the housing (0: Not availible, 1 : Availible). <ID>: Housing ID, <START>: Date of start, [END]; Date of end (optionnal).");
                     strcat(response, formatter);
                     snprintf(formatter, BUFFER_SIZE, "%-*s  %s\n", 36, "HELP", "Show the help.");
                     strcat(response, formatter);
@@ -473,7 +477,7 @@ void get_planning(int cnx, User *usr, const char *buffer) {
     }
 
     if (!validate_date(debut)){
-        send(cnx, "Invalid start date foramt. (YYYY-mm-dd)\n", 39, 0);
+        send(cnx, "Invalid start date formatt. (YYYY-mm-dd)\n", 42, 0);
         snprintf(log_msg, BUFFER_SIZE, "[Argument] Start date (%s) invalid format !", debut);
         output_log(log_msg);
         return;
@@ -487,20 +491,57 @@ void get_planning(int cnx, User *usr, const char *buffer) {
     }
 
     const char *sql;
-    const char *paramValues[3];
+    const char *paramValues[4];
     int paramCount;
 
     if (parsed == 2) {
-        sql = "SELECT date_debut, date_fin FROM sae._reservation WHERE id_logement = $1 AND date_fin >= $2 ORDER BY date_debut;";
-        paramValues[0] = id;
-        paramValues[1] = debut;
-        paramCount = 2;
+        if (usr->perms.admin){
+            sql = "SELECT * FROM sae._logement WHERE id = $1;";
+            paramValues[0] = id;
+            paramCount = 1;
+        } else {
+            sql = "SELECT * FROM sae._logement WHERE id = $1 AND id_proprietaire = $2;";
+            paramValues[0] = id;
+            paramValues[1] = usr->id;
+            paramCount = 2;
+        }
+
+        PGresult *res = request(sql, paramValues, paramCount);
+
+        if (res == NULL || PQntuples(res) == 0) {
+            send(cnx, "Housing not found.\n", 20, 0);
+            return;
+        }
+
+        res = NULL;
+
+        if (usr->perms.admin){
+            sql = "SELECT date_debut, date_fin FROM sae._reservation r INNER JOIN sae._logement l ON  l.id = r.id_logement WHERE id_logement = $1 AND date_fin >= $2 ORDER BY date_debut;";
+            paramValues[0] = id;
+            paramValues[1] = debut;
+            paramCount = 2;
+        } else {
+            sql = "SELECT date_debut, date_fin FROM sae._reservation r INNER JOIN sae._logement l ON  l.id = r.id_logement WHERE id_logement = $1 AND date_fin >= $2 AND id_proprietaire = $3 ORDER BY date_debut;";
+            paramValues[0] = id;
+            paramValues[1] = debut;
+            paramValues[2] = usr->id;
+            paramCount = 3;
+        }
     } else {
-        sql = "SELECT date_debut, date_fin FROM sae._reservation WHERE id_logement = $1 AND date_fin >= $2 AND date_debut <= $3 ORDER BY date_debut;";
+        if (usr->perms.admin){
+            sql = "SELECT date_debut, date_fin FROM sae._reservation r INNER JOIN sae._logement l ON  l.id = r.id_logement WHERE id_logement = $1 AND date_fin >= $2 AND date_debut <= $3 ORDER BY date_debut;";
+            paramValues[0] = id;
+            paramValues[1] = debut;
+            paramValues[2] = fin;
+            paramCount = 3;
+        } else {
+            sql = "SELECT date_debut, date_fin FROM sae._reservation r INNER JOIN sae._logement l ON  l.id = r.id_logement WHERE id_logement = $1 AND date_fin >= $2 AND date_debut <= $3 AND id_proprietaire = $4 ORDER BY date_debut;";
+        }
         paramValues[0] = id;
         paramValues[1] = debut;
         paramValues[2] = fin;
-        paramCount = 3;
+        paramValues[3] = usr->id;
+        paramCount = 4;
     }
 
     PGresult *res = request(sql, paramValues, paramCount);
