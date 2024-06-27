@@ -2,7 +2,29 @@
 
 Synkronizator est une application serveur en C conçue pour gérer la disponibilité des propriétés pour la plateforme ALHaIZ Breizh.
 
+## Installation de GCC
+
+Si `gcc` n'est pas installé, installez le via :
+
+```bash
+sudo su
+apt-get update
+apt-get install build-essential
+```
+
+La librairie `postgresql` **DOIT** être installé, consultez [ce lien](https://www.postgresql.org/) ou executer la commande suivante :
+
+```bash
+apt-get install libpq-dev
+```
+
 ## Installation du Serveur
+
+Après avoir installer les fichiers du Synkronizator (synkronizator.c et .env.template notamment), placez vous dans le dossier les contenants.
+
+```bash
+cd nom_repertoire
+```
 
 ### Configuration .env
 
@@ -11,8 +33,6 @@ En partant du `.env.template` créer un fichier `.env`, en remplissant le fichie
 ### Compilation
 
 Pour compiler le serveur , utilisez la commande suivante :
-
-La librairie `postgresql` **DOIT** être installé, consultez [ce lien](https://www.postgresql.org/).
 
 ```bash
 gcc -o synkronizator synkronizator.c -lpq
@@ -24,6 +44,12 @@ Exemple (MacOS) :
 
 ```bash
 gcc -o synkronizator synkronizator.c -Wall -I /opt/homebrew/Cellar/postgresql@14/14.12/include/postgresql@14 -L /opt/homebrew/opt/libpq/lib -lpq
+```
+
+Ajouter les droits d'exécution au programme obtenu.
+
+```bash
+chmod +rx ./synkronizator
 ```
 
 ### Lancement du Serveur
@@ -40,6 +66,8 @@ Pour lancer le serveur :
 - --help : Affiche l'aide et quitte le programme
 - --verbose : Active le mode verbeux (logs détaillés)
 - --log <fichier> : Spécifie le fichier de log (par défaut : application.log)
+
+Le mode `--verbose` ajoute les logs au fichier, celui-ci n'est pas remis à zéro lors de l'ouverture.
 
 ## Protocole
 
@@ -72,9 +100,18 @@ Liste tous les logements accessibles par l'utilisateur.
 Requête : `LIST_ALL`
 Réponse : Liste des logements au format JSON
 
+Exemple:
+
+```bash
+LIST_ALL
+```
+
 ```JSON
 [{"id": 1, "titre": "Maison en bord de mer"}, {"id": 2, "titre": "Appartement centre-ville"}]
 ```
+
+- `id`: Identifiant du logement.
+- `titre`: Titre du logement.
 
 ---
 
@@ -92,9 +129,19 @@ Requête : `GET_PLANNING <ID> <DEBUT> [FIN]`
 
 Réponse : Planning au format JSON
 
+Exemple:
+
+```bash
+GET_PLANNING 1 2024-07-01 2024-08-01
+```
+
 ```JSON
 [{"debut": "2024-07-01", "fin": "2024-07-07"}, {"debut": "2024-07-15", "fin": "2024-07-22"}]
 ```
+
+- Liste de tout les réservations d'un logement dans une période donnée.
+- `debut`: Date de début de la réservation.
+- `fin`: Date de fin de la réservation.
 
 ---
 
@@ -107,11 +154,20 @@ Requête : `SET_AVAILABILITY <ID> <0/1>`
 <ID> : Identifiant du logement
 <0/1> : 0 pour indisponible, 1 pour disponible
 
-Réponse : Confirmation au format JSON
+Réponse : Confirmation au format JSON avec le nouveau statut
+
+Exemple:
+
+```bash
+SET_AVAILABILITY 1 0
+```
 
 ```JSON
-[{"id": "1", "status": "1"}]
+[{"id": "1", "status": "f"}]
 ```
+
+- `id`: Identifiant du logement modifié.
+- `status`: Nouveau status du logement (`f` pour hors ligne et `t` pour en ligne)
 
 ---
 
@@ -137,12 +193,28 @@ Réponse : Aucune (la connexion est fermée)
 Le serveur gère les permissions des utilisateurs en fonction de la clé API utilisé.
 La configuration des clés ce fait via le site internet dans la page de consultation / modification d'un compte propriétaire.
 
-## Logs
+## Client
 
-En mode verbeux, le serveur enregistre les événements importants dans un fichier de log. Par défaut, le fichier est application.log, mais peut être spécifié avec l'option --log.
-Les logs incluent :
+Un client est mis à votre disposition pour tester le server.
 
-Les connexions et déconnexions des clients
-Les tentatives d'authentification
-Les actions exécutées
-Les erreurs rencontrées
+Il n'est pas obligatoire de passer par lui, vous pouvez très bien utiliser `telnet`.
+
+Pour compiler le client , utilisez la commande suivante :
+
+```bash
+gcc -o client client.c
+```
+
+Ajouter les droits d'exécution au programme obtenu.
+
+```bash
+chmod +rx ./client
+```
+
+Puis pour l'executer :
+
+```bash
+./client ip_server port_server
+```
+
+Celui-ci affichera les messages renvoyés par le serveur, et vous demandera également les prompts nécessaire.
