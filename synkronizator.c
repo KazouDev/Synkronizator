@@ -212,7 +212,7 @@ void output_log(const char *msg) {
 
 
 void help() {
-    printf("Usage: ./server [options] --port <port>\n");
+    printf("Usage: ./synkronizator [options] --port <port>\n");
     printf("  --%-*s  %s\n", 7, "help", "Show the different options available for this command.");
     printf("  --%-*s  %s\n", 7, "verbose", "Log entirely the server.");
     printf("  --%-*s  %s\n", 7, "log", "Define the file for the log output, default is application.log");
@@ -304,6 +304,7 @@ void launch_socket() {
             if (send(cnx, response, strlen(response), 0) <= 0) break;
 
             while (1) {
+                memset(buffer, 0, BUFFER_SIZE);
                 printf("Waiting for action...\n");
                 if (send(cnx, "WAIT ACTION\n", 13, 0) <= 0) break;
                 output_log("Waiting for action...");
@@ -400,50 +401,49 @@ const char* pg_get_attribute(PGresult *res, int row, const char *attribute_name)
 void list_all(int cnx, User *usr) {
     if (!usr->perms.list_logements) {
         send(cnx, "Permission Denied.\n", 20, 0);
-        return;
-    }
-
-    const char *sql;
-    const char *paramValues[1];
-    int paramCount;
-
-    if (usr->perms.admin){
-        sql = "SELECT id, titre FROM sae._logement;";
-        paramCount = 0;
     } else {
-        sql = "SELECT id, titre FROM sae._logement WHERE id_proprietaire = $1;";
-        paramValues[0] = usr->id;
-        paramCount = 1;
-    }   
-    
-    PGresult *res = request(sql, paramValues, paramCount);
-    
-    if (res == NULL) {
-        send(cnx, "Error executing query.\n", 23, 0);
-        return;
-    }
+        const char *sql;
+        const char *paramValues[1];
+        int paramCount;
 
-    int rows = PQntuples(res);
-    char json[BUFFER_SIZE] = "[";
-    char temp[BUFFER_SIZE];
-    char buffer[BUFFER_SIZE];
-    for (int i = 0; i < rows; i++) {
-        if (i > 0){
-            strcat(json, ", ");
+        if (usr->perms.admin){
+            sql = "SELECT id, titre FROM sae._logement;";
+            paramCount = 0;
+        } else {
+            sql = "SELECT id, titre FROM sae._logement WHERE id_proprietaire = $1;";
+            paramValues[0] = usr->id;
+            paramCount = 1;
+        }   
+        
+        PGresult *res = request(sql, paramValues, paramCount);
+        
+        if (res == NULL) {
+            send(cnx, "Error executing query.\n", 23, 0);
+            return;
         }
-        snprintf(temp, BUFFER_SIZE, "{\"id\": %s, \"titre\": \"%s\"}",
-                 PQgetvalue(res, i, 0), PQgetvalue(res, i, 1));
-        strcat(json, temp);
+
+        int rows = PQntuples(res);
+        char json[BUFFER_SIZE] = "[";
+        char temp[BUFFER_SIZE];
+        char buffer[BUFFER_SIZE];
+        for (int i = 0; i < rows; i++) {
+            if (i > 0){
+                strcat(json, ", ");
+            }
+            snprintf(temp, BUFFER_SIZE, "{\"id\": %s, \"titre\": \"%s\"}",
+                    PQgetvalue(res, i, 0), PQgetvalue(res, i, 1));
+            strcat(json, temp);
+        }
+        strcat(json, "]");
+
+        snprintf(buffer, sizeof(buffer), "[LIST_ALL] Result: %s", json);
+        output_log(buffer);
+
+        strcat(json, "\n");
+
+        send(cnx, json, strlen(json), 0);
+        PQclear(res);
     }
-    strcat(json, "]");
-
-    snprintf(buffer, sizeof(buffer), "[LIST_ALL] Result: %s", json);
-    output_log(buffer);
-
-    strcat(json, "\n");
-
-    send(cnx, json, strlen(json), 0);
-    PQclear(res);
 }
 
 #define MAX_ID_LENGTH 49
@@ -452,126 +452,126 @@ void list_all(int cnx, User *usr) {
 void get_planning(int cnx, User *usr, const char *buffer) {
     if (!usr->perms.calendrier_disponibilite) {
         send(cnx, "Permission Denied.\n", 20, 0);
-        return;
-    }
+    } else {
+        char id[MAX_ID_LENGTH + 1] = {0};
+        char debut[MAX_DATE_LENGTH + 1] = {0};
+        char fin[MAX_DATE_LENGTH + 1] = {0};
+        char log_msg[BUFFER_SIZE];
 
-    char id[MAX_ID_LENGTH + 1] = {0};
-    char debut[MAX_DATE_LENGTH + 1] = {0};
-    char fin[MAX_DATE_LENGTH + 1] = {0};
-    char log_msg[BUFFER_SIZE];
+        int parsed = sscanf(buffer + 13, "%49s %10s %10s", id, debut, fin);
 
-    int parsed = sscanf(buffer + 13, "%49s %10s %10s", id, debut, fin);
-
-    if (parsed < 2) {
-        send(cnx, "Invalid format. Usage: GET_PLANNING <ID> <DEBUT> [FIN]\n", 60, 0);
-        snprintf(log_msg, BUFFER_SIZE, "[Argument] Invalid format !");
-        output_log(log_msg);
-        return;
-    }
-
-    if (strlen(buffer) > strlen("GET_PLANNING") + MAX_ID_LENGTH + MAX_DATE_LENGTH * 2 + 3) {
-        send(cnx, "Input too long. Please check your parameters.\n", 47, 0);
-        snprintf(log_msg, BUFFER_SIZE, "[Argument] Input too long !");
-        output_log(log_msg);
-        return;
-    }
-
-    if (!validate_date(debut)){
-        send(cnx, "Invalid start date formatt. (YYYY-mm-dd)\n", 42, 0);
-        snprintf(log_msg, BUFFER_SIZE, "[Argument] Start date (%s) invalid format !", debut);
-        output_log(log_msg);
-        return;
-    }
-
-    if (strlen(fin) > 0 && !validate_date(fin)){
-        send(cnx, "Invalid end date foramt. (YYYY-mm-dd)\n", 39, 0);
-        snprintf(log_msg, BUFFER_SIZE, "[Argument] End date (%s) invalid format !", fin);
-        output_log(log_msg);
-        return;
-    }
-
-    const char *sql;
-    const char *paramValues[4];
-    int paramCount;
-
-    if (parsed == 2) {
-        if (usr->perms.admin){
-            sql = "SELECT * FROM sae._logement WHERE id = $1;";
-            paramValues[0] = id;
-            paramCount = 1;
-        } else {
-            sql = "SELECT * FROM sae._logement WHERE id = $1 AND id_proprietaire = $2;";
-            paramValues[0] = id;
-            paramValues[1] = usr->id;
-            paramCount = 2;
-        }
-
-        PGresult *res = request(sql, paramValues, paramCount);
-
-        if (res == NULL || PQntuples(res) == 0) {
-            send(cnx, "Housing not found.\n", 20, 0);
+        if (parsed < 2) {
+            send(cnx, "Invalid format. Usage: GET_PLANNING <ID> <DEBUT> [FIN]\n", 60, 0);
+            snprintf(log_msg, BUFFER_SIZE, "[Argument] Invalid format !");
+            output_log(log_msg);
             return;
         }
 
-        res = NULL;
-
-        if (usr->perms.admin){
-            sql = "SELECT date_debut, date_fin FROM sae._reservation r INNER JOIN sae._logement l ON  l.id = r.id_logement WHERE id_logement = $1 AND date_fin >= $2 ORDER BY date_debut;";
-            paramValues[0] = id;
-            paramValues[1] = debut;
-            paramCount = 2;
-        } else {
-            sql = "SELECT date_debut, date_fin FROM sae._reservation r INNER JOIN sae._logement l ON  l.id = r.id_logement WHERE id_logement = $1 AND date_fin >= $2 AND id_proprietaire = $3 ORDER BY date_debut;";
-            paramValues[0] = id;
-            paramValues[1] = debut;
-            paramValues[2] = usr->id;
-            paramCount = 3;
+        if (strlen(buffer) > strlen("GET_PLANNING") + MAX_ID_LENGTH + MAX_DATE_LENGTH * 2 + 3) {
+            send(cnx, "Input too long. Please check your parameters.\n", 47, 0);
+            snprintf(log_msg, BUFFER_SIZE, "[Argument] Input too long !");
+            output_log(log_msg);
+            return;
         }
-    } else {
-        if (usr->perms.admin){
-            sql = "SELECT date_debut, date_fin FROM sae._reservation r INNER JOIN sae._logement l ON  l.id = r.id_logement WHERE id_logement = $1 AND date_fin >= $2 AND date_debut <= $3 ORDER BY date_debut;";
+
+        if (!validate_date(debut)){
+            send(cnx, "Invalid start date formatt. (YYYY-mm-dd)\n", 42, 0);
+            snprintf(log_msg, BUFFER_SIZE, "[Argument] Start date (%s) invalid format !", debut);
+            output_log(log_msg);
+            return;
+        }
+
+        if (strlen(fin) > 0 && !validate_date(fin)){
+            send(cnx, "Invalid end date foramt. (YYYY-mm-dd)\n", 39, 0);
+            snprintf(log_msg, BUFFER_SIZE, "[Argument] End date (%s) invalid format !", fin);
+            output_log(log_msg);
+            return;
+        }
+
+        const char *sql;
+        const char *paramValues[4];
+        int paramCount;
+
+        if (parsed == 2) {
+            if (usr->perms.admin){
+                sql = "SELECT * FROM sae._logement WHERE id = $1;";
+                paramValues[0] = id;
+                paramCount = 1;
+            } else {
+                sql = "SELECT * FROM sae._logement WHERE id = $1 AND id_proprietaire = $2;";
+                paramValues[0] = id;
+                paramValues[1] = usr->id;
+                paramCount = 2;
+            }
+
+            PGresult *res = request(sql, paramValues, paramCount);
+
+            if (res == NULL || PQntuples(res) == 0) {
+                send(cnx, "Housing not found.\n", 20, 0);
+                PQclear(res);
+                return;
+            }
+
+            res = NULL;
+
+            if (usr->perms.admin){
+                sql = "SELECT date_debut, date_fin FROM sae._reservation r INNER JOIN sae._logement l ON  l.id = r.id_logement WHERE id_logement = $1 AND date_fin >= $2 ORDER BY date_debut;";
+                paramValues[0] = id;
+                paramValues[1] = debut;
+                paramCount = 2;
+            } else {
+                sql = "SELECT date_debut, date_fin FROM sae._reservation r INNER JOIN sae._logement l ON  l.id = r.id_logement WHERE id_logement = $1 AND date_fin >= $2 AND id_proprietaire = $3 ORDER BY date_debut;";
+                paramValues[0] = id;
+                paramValues[1] = debut;
+                paramValues[2] = usr->id;
+                paramCount = 3;
+            }
+        } else {
+            if (usr->perms.admin){
+                sql = "SELECT date_debut, date_fin FROM sae._reservation r INNER JOIN sae._logement l ON  l.id = r.id_logement WHERE id_logement = $1 AND date_fin >= $2 AND date_debut <= $3 ORDER BY date_debut;";
+                paramValues[0] = id;
+                paramValues[1] = debut;
+                paramValues[2] = fin;
+                paramCount = 3;
+            } else {
+                sql = "SELECT date_debut, date_fin FROM sae._reservation r INNER JOIN sae._logement l ON  l.id = r.id_logement WHERE id_logement = $1 AND date_fin >= $2 AND date_debut <= $3 AND id_proprietaire = $4 ORDER BY date_debut;";
+            }
             paramValues[0] = id;
             paramValues[1] = debut;
             paramValues[2] = fin;
-            paramCount = 3;
-        } else {
-            sql = "SELECT date_debut, date_fin FROM sae._reservation r INNER JOIN sae._logement l ON  l.id = r.id_logement WHERE id_logement = $1 AND date_fin >= $2 AND date_debut <= $3 AND id_proprietaire = $4 ORDER BY date_debut;";
+            paramValues[3] = usr->id;
+            paramCount = 4;
         }
-        paramValues[0] = id;
-        paramValues[1] = debut;
-        paramValues[2] = fin;
-        paramValues[3] = usr->id;
-        paramCount = 4;
-    }
 
-    PGresult *res = request(sql, paramValues, paramCount);
-    
-    if (res == NULL) {
-        send(cnx, "Error executing query.\n", 23, 0);
-        return;
-    }
-
-    int rows = PQntuples(res);
-    char json[BUFFER_SIZE] = "[";
-    char temp[BUFFER_SIZE];
-
-    memset(log_msg, 0, BUFFER_SIZE);
-    for (int i = 0; i < rows; i++) {
-        if (i > 0) {
-            strcat(json, ", ");
+        PGresult *res = request(sql, paramValues, paramCount);
+        
+        if (res == NULL) {
+            send(cnx, "Error executing query.\n", 23, 0);
+            return;
         }
-        snprintf(temp, BUFFER_SIZE, "{\"debut\": \"%s\", \"fin\": \"%s\"}",
-                 PQgetvalue(res, i, 0), PQgetvalue(res, i, 1));
-        strcat(json, temp);
+
+        int rows = PQntuples(res);
+        char json[BUFFER_SIZE] = "[";
+        char temp[BUFFER_SIZE];
+
+        memset(log_msg, 0, BUFFER_SIZE);
+        for (int i = 0; i < rows; i++) {
+            if (i > 0) {
+                strcat(json, ", ");
+            }
+            snprintf(temp, BUFFER_SIZE, "{\"debut\": \"%s\", \"fin\": \"%s\"}",
+                    PQgetvalue(res, i, 0), PQgetvalue(res, i, 1));
+            strcat(json, temp);
+        }
+        strcat(json, "]");
+
+        snprintf(log_msg, sizeof(log_msg), "[GET_AVAILABILITY] Result for logement %s: %s", id, json);
+        output_log(log_msg);
+
+        strcat(json, "\n");
+        send(cnx, json, strlen(json), 0);
+        PQclear(res);
     }
-    strcat(json, "]");
-
-    snprintf(log_msg, sizeof(log_msg), "[GET_AVAILABILITY] Result for logement %s: %s", id, json);
-    output_log(log_msg);
-
-    strcat(json, "\n");
-    send(cnx, json, strlen(json), 0);
-    PQclear(res);
 }
 
 void set_availability(int cnx, User *usr, const char *buffer) {

@@ -197,7 +197,11 @@ La configuration des clés ce fait via le site internet dans la page de consulta
 
 Un client est mis à votre disposition pour tester le server.
 
-Il n'est pas obligatoire de passer par lui, vous pouvez très bien utiliser `telnet`.
+Il n'est pas obligatoire de passer par lui, vous pouvez très bien utiliser `telnet` (conseiller d'ailleurs).
+
+```bash
+telnet ip_server port_server
+```
 
 Pour compiler le client , utilisez la commande suivante :
 
@@ -218,3 +222,21 @@ Puis pour l'executer :
 ```
 
 Celui-ci affichera les messages renvoyés par le serveur, et vous demandera également les prompts nécessaire.
+
+## Fichier données
+
+Dans `output.txt` ce trouve un exemple de ce qui est produit par le Synkronizator.
+
+Ce fichier à était produit via une redirection :
+
+```bash
+telnet localhost 8080 > output.txt
+```
+
+Voici ce qui à était envoyé dans le serveur (dans l'ordre) :
+
+- `ad733437557623332b2fdf178b30f4aa22e562cb642975c81e8eea676976d210` (clé API)
+- `list_all`
+- `get_planning 21 2020-01-01`
+- `set_availability 41 0`
+- `quit`

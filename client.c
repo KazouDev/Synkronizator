@@ -24,8 +24,7 @@ int main(int argc, char *argv[]) {
 
     portno = atoi(argv[2]);
     sockfd = socket(AF_INET, SOCK_STREAM, 0);
-    if (sockfd < 0) 
-        error("ERROR opening socket");
+    if (sockfd < 0) error("ERROR opening socket");
 
     memset(&serv_addr, 0, sizeof(serv_addr));
     serv_addr.sin_family = AF_INET;
@@ -33,40 +32,34 @@ int main(int argc, char *argv[]) {
     if (inet_pton(AF_INET, argv[1], &serv_addr.sin_addr) <= 0)
         error("ERROR invalid address");
 
-    if (connect(sockfd, (struct sockaddr *)&serv_addr, sizeof(serv_addr)) < 0) 
+    if (connect(sockfd, (struct sockaddr *)&serv_addr, sizeof(serv_addr)) < 0)
         error("ERROR connecting");
 
     printf("Connected to server.\n");
 
-    while (1) {
+    int quitted = 1;
+    while (quitted) {
         memset(buffer, 0, BUFFER_SIZE);
         int n = read(sockfd, buffer, BUFFER_SIZE - 1);
-        if (n < 0) error("ERROR reading from socket");
-        if (n == 0) {
+        if (n <= 0) {
             printf("Server closed the connection.\n");
             break;
         }
-
         printf("Server: %s", buffer);
 
-        if (strstr(buffer, "WAIT AUTH") != NULL) {
-            printf("Enter API key: ");
+        if (strstr(buffer, "WAIT")){
+            printf("Enter message: ");
             fgets(buffer, BUFFER_SIZE - 1, stdin);
             buffer[strcspn(buffer, "\n")] = 0;
-        } else if (strstr(buffer, "WAIT ACTION") != NULL) {
-            printf("Enter command: ");
-            fgets(buffer, BUFFER_SIZE - 1, stdin);
-            buffer[strcspn(buffer, "\n")] = 0;
+
             if (strcmp(buffer, "QUIT") == 0) {
                 printf("Closing connection...\n");
-                break;
+                quitted = 0;
             }
-        } else {
-            continue;
-        }
 
-        n = write(sockfd, buffer, strlen(buffer));
-        if (n < 0) error("ERROR writing to socket");
+            n = write(sockfd, buffer, strlen(buffer));
+            if (n < 0) error("ERROR writing to socket");
+        }
     }
 
     close(sockfd);
