@@ -1,0 +1,103 @@
+[2024-06-28 17:52:15] Socket Initialization: Address already in use
+[2024-06-28 17:52:22] [Socket] Listening on port: 8081
+[2024-06-28 17:52:51] [IP: 0.85.138.109] [Socket] New connection
+[2024-06-28 17:52:51] [IP: 0.85.138.109] Waiting for API key...
+[2024-06-28 17:53:08] [IP: 0.85.138.109] API Key received : d693872935bd9623158a1c55678e2e305c4d4587a454a78bc06ddc334b25955e
+[2024-06-28 17:53:08] [IP: 0.85.138.109] [Authentification] API Key OK (JeanD)
+[2024-06-28 17:53:08] [IP: 0.85.138.109] Waiting for action...
+[2024-06-28 17:53:13] [IP: 0.85.138.109] [Command] Received help
+
+[2024-06-28 17:53:13] [IP: 0.85.138.109] Waiting for action...
+[2024-06-28 17:53:21] [IP: 0.85.138.109] [Command] Received list_all
+
+[2024-06-28 17:53:21] [IP: 0.85.138.109] [LIST_ALL] Result: [{"id": 41, "titre": "Bateau de luxe dans les Ã®les"}, {"id": 21, "titre": "Villa d'exception avec piscine Ã  dÃ©bordement"}, {"id": 1, "titre": "Appartement cosy en centre-ville"}]
+[2024-06-28 17:53:21] [IP: 0.85.138.109] Waiting for action...
+[2024-06-28 17:53:50] [IP: 0.85.138.109] [Command] Received get_planning 1 2020-01-01
+
+[2024-06-28 17:53:50] [IP: 0.85.138.109] Waiting for action...
+[2024-06-28 17:54:15] [IP: 0.85.138.109] [Command] Received set_availability 21 0
+
+[2024-06-28 17:54:15] [IP: 0.85.138.109] [SET_DISPONIBILITE] Result for logement 21: [{"id": "21", "status": "f"}]
+[2024-06-28 17:54:15] [IP: 0.85.138.109] Waiting for action...
+[2024-06-28 17:54:44] [IP: 0.85.138.109] [Command] Received ÿôÿý
+[2024-06-28 17:54:44] [IP: 0.85.138.109] [Command] Unknown Command (ÿôÿý)
+[2024-06-28 17:54:44] [IP: 0.85.138.109] Waiting for action...
+[2024-06-28 17:54:48] [IP: 0.85.138.109] [Command] Received ÿôÿý
+[2024-06-28 17:54:48] [IP: 0.85.138.109] [Command] Unknown Command (ÿôÿý)
+[2024-06-28 17:54:48] [IP: 0.85.138.109] Waiting for action...
+[2024-06-28 17:54:49] [IP: 0.85.138.109] [Command] Received 
+
+[2024-06-28 17:54:49] [IP: 0.85.138.109] [Command] Unknown Command (
+)
+[2024-06-28 17:54:49] [IP: 0.85.138.109] Waiting for action...
+[2024-06-28 17:54:50] [IP: 0.85.138.109] [Command] Received quit
+
+[2024-06-28 17:54:50] [IP: 0.85.138.109] [Socket] Disconnection
+[2024-06-28 17:54:54] [IP: 127.0.0.1] [Socket] New connection
+[2024-06-28 17:54:54] [IP: 127.0.0.1] Waiting for API key...
+[2024-06-28 17:54:55] [IP: 127.0.0.1] API Key received : ad733437557623332b2fdf178b30f4aa22e562cb642975c81e8eea676976d210
+[2024-06-28 17:54:56] [IP: 127.0.0.1] [Authentification] API Key OK (JeanD)
+[2024-06-28 17:54:56] [IP: 127.0.0.1] Waiting for action...
+[2024-06-28 17:55:04] [IP: 127.0.0.1] [Command] Received get_planning 1 2020-01-01
+
+[2024-06-28 17:55:05] [IP: 127.0.0.1] [GET_AVAILABILITY] Result for logement 1: [{"debut": "2024-07-15", "fin": "2024-07-22"}]
+[2024-06-28 17:55:05] [IP: 127.0.0.1] Waiting for action...
+[2024-06-28 17:55:29] [IP: 127.0.0.1] [Command] Received get_planning 21 2024-01-01 2025-01-01
+
+[2024-06-28 17:55:29] [IP: 127.0.0.1] [GET_AVAILABILITY] Result for logement 21: [{"debut": "2024-08-05", "fin": "2024-08-15"}, {"debut": "2024-08-25", "fin": "2024-08-31"}, {"debut": "2024-08-25", "fin": "2024-08-31"}]
+[2024-06-28 17:55:29] [IP: 127.0.0.1] Waiting for action...
+[2024-06-28 17:55:43] [IP: 127.0.0.1] [Command] Received get_planning 21 29334
+
+[2024-06-28 17:55:43] [IP: 127.0.0.1] [Argument] Start date (29334) invalid format !
+[2024-06-28 17:55:43] [IP: 127.0.0.1] Waiting for action...
+[2024-06-28 17:55:51] [IP: 127.0.0.1] [Command] Received get_planning 234 2020-01-01
+
+[2024-06-28 17:55:52] [IP: 127.0.0.1] Waiting for action...
+[2024-06-28 17:57:27] [IP: 127.0.0.1] [Command] Received ÿôÿý
+[2024-06-28 17:57:27] [IP: 127.0.0.1] [Command] Unknown Command (ÿôÿý)
+[2024-06-28 17:57:27] [IP: 127.0.0.1] Waiting for action...
+[2024-06-28 17:57:30] [IP: 127.0.0.1] [Command] Received ÿôÿý
+[2024-06-28 17:57:30] [IP: 127.0.0.1] [Command] Unknown Command (ÿôÿý)
+[2024-06-28 17:57:30] [IP: 127.0.0.1] Waiting for action...
+[2024-06-28 17:57:32] [IP: 127.0.0.1] [Command] Received quit
+
+[2024-06-28 17:57:32] [IP: 127.0.0.1] [Socket] Disconnection
+[2024-06-28 17:57:42] [IP: 127.0.0.1] [Socket] New connection
+[2024-06-28 17:57:42] [IP: 127.0.0.1] Waiting for API key...
+[2024-06-28 17:57:51] [IP: 127.0.0.1] API Key received : a
+[2024-06-28 17:57:51] [IP: 127.0.0.1] AUTH REFUSED (a)
+[2024-06-28 17:57:51] [IP: 127.0.0.1] Waiting for API key...
+[2024-06-28 17:57:55] [IP: 127.0.0.1] API Key received : a
+[2024-06-28 17:57:55] [IP: 127.0.0.1] AUTH REFUSED (a)
+[2024-06-28 17:57:55] [IP: 127.0.0.1] Waiting for API key...
+[2024-06-28 17:58:50] [IP: 127.0.0.1] API Key received : 
+[2024-06-28 17:58:50] [IP: 127.0.0.1] AUTH REFUSED ()
+[2024-06-28 17:58:50] [IP: 127.0.0.1] Waiting for API key...
+[2024-06-28 17:58:52] [IP: 127.0.0.1] API Key received : quit
+[2024-06-28 17:58:52] [IP: 127.0.0.1] AUTH REFUSED (quit)
+[2024-06-28 17:58:52] [IP: 127.0.0.1] Waiting for API key...
+[2024-06-28 17:58:57] [IP: 127.0.0.1] API Key received : quit
+[2024-06-28 17:58:57] [IP: 127.0.0.1] AUTH REFUSED (quit)
+[2024-06-28 17:58:57] [IP: 127.0.0.1] Waiting for API key...
+[2024-06-28 17:59:03] Socket Initialization: Address already in use
+[2024-06-28 18:00:03] [Socket] Listening on port: 8081
+[2024-06-28 18:00:05] [IP: 0.213.199.109] [Socket] New connection
+[2024-06-28 18:00:05] [IP: 0.213.199.109] Waiting for API key...
+[2024-06-28 18:00:09] [IP: 0.213.199.109] API Key received : ad733437557623332b2fdf178b30f4aa22e562cb642975c81e8eea676976d210
+[2024-06-28 18:00:09] [IP: 0.213.199.109] [Authentification] API Key OK (JeanD)
+[2024-06-28 18:00:09] [IP: 0.213.199.109] Waiting for action...
+[2024-06-28 18:00:13] [IP: 0.213.199.109] [Command] Received list_all
+
+[2024-06-28 18:00:13] [IP: 0.213.199.109] [LIST_ALL] Result: [{"id": 41, "titre": "Bateau de luxe dans les Ã®les"}, {"id": 1, "titre": "Appartement cosy en centre-ville"}, {"id": 21, "titre": "Villa d'exception avec piscine Ã  dÃ©bordement"}]
+[2024-06-28 18:00:13] [IP: 0.213.199.109] Waiting for action...
+[2024-06-28 18:00:30] [IP: 0.213.199.109] [Command] Received get_planning 21 2020-01-01
+
+[2024-06-28 18:00:31] [IP: 0.213.199.109] [GET_AVAILABILITY] Result for logement 21: [{"debut": "2024-08-05", "fin": "2024-08-15"}, {"debut": "2024-08-25", "fin": "2024-08-31"}, {"debut": "2024-08-25", "fin": "2024-08-31"}]
+[2024-06-28 18:00:31] [IP: 0.213.199.109] Waiting for action...
+[2024-06-28 18:00:56] [IP: 0.213.199.109] [Command] Received set_availability 41 0
+
+[2024-06-28 18:00:56] [IP: 0.213.199.109] [SET_DISPONIBILITE] Result for logement 41: [{"id": "41", "status": "f"}]
+[2024-06-28 18:00:56] [IP: 0.213.199.109] Waiting for action...
+[2024-06-28 18:01:03] [IP: 0.213.199.109] [Command] Received quit
+
+[2024-06-28 18:01:03] [IP: 0.213.199.109] [Socket] Disconnection

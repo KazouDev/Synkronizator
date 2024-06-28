@@ -1,0 +1,18 @@
+Trying ::1...
+Trying 127.0.0.1...
+Connected to localhost.
+Escape character is '^]'.
+
+WAIT AUTH
+AUTH OK JeanD
+
+WAIT ACTION 
+[{"id": 41, "titre": "Bateau de luxe dans les îles"}, {"id": 1, "titre": "Appartement cosy en centre-ville"}, {"id": 21, "titre": "Villa d'exception avec piscine à débordement"}]
+
+WAIT ACTION
+[{"debut": "2024-08-05", "fin": "2024-08-15"}, {"debut": "2024-08-25", "fin": "2024-08-31"}, {"debut": "2024-08-25", "fin": "2024-08-31"}]
+
+WAIT ACTION
+[{"id": "41", "status": "f"}]
+
+WAIT ACTION
